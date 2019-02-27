@@ -26,6 +26,7 @@ const reducer = (state = initialState, action) => {
       },
       totalPrice: state.totalPrice + INGREDIENT_PRICES[action.ingredientName]
     }
+
     case actionTypes.REMOVE_INGREDIENT :
     return {
       ...state,
@@ -35,6 +36,23 @@ const reducer = (state = initialState, action) => {
       },
       totalPrice: state.totalPrice + INGREDIENT_PRICES[action.ingredientName]
     }
+
+    case actionTypes.FETCH_INGREDIENT_FAILED :
+    return {
+      ...state,
+      error: true
+    }
+
+    case actionTypes.SET_INGREDIENT :
+    return {
+      ...state,
+      ingredients: action.ingredients,
+      error: false
+    }
+
+
+
+
     default:
     return state
 
