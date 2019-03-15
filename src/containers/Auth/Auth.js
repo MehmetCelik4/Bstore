@@ -144,12 +144,12 @@ class Auth extends Component {
         <form onSubmit={this.submitHandler}>
           {form}
           <Button btnType="Success">Submit</Button>
+          </form>
           <Button 
             clicked={this.swithAuthHandler} 
             btnType="Danger">
             Switch to {this.state.isSignedup ? "Sign IN" : "Sign Up"}
           </Button>
-        </form>
       </div>
     );
   }
